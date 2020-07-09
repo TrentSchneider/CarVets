@@ -1,14 +1,8 @@
 {
-    "folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "..\\ur-rich-fsf-pt-05-2020-u-c\\07-Project-1"
-		},
-		{
-			"path": "..\\ur-rich-fsf-pt-05-2020-u-c\\02-CSS-Bootstrap"
-		}
-	],
-    "settings": {}
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {}
 }
