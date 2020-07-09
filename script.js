@@ -21,3 +21,18 @@ if (navigator.geolocation) {
 
 //   method: "GET",
 // }).then(function (response) {});
+
+// function for loading the modal using foundation
+function loadModal() {
+  var locModal = $("div");
+  locModal.addClass("reveal");
+  locModal.attr("id", "modal1");
+  locModal.attr("data-reveal");
+  var textSpace = $("p");
+  textSpace.text("placeholder text");
+  var closeButton = $("button");
+  closeButton.addClass("close-button");
+  closeButton.attr("data-close");
+  closeButton.attr("aria-label", "Close modal");
+  closeButton.attr("type", "button");
+}
