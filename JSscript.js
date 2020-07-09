@@ -20,7 +20,11 @@ if (navigator.geolocation) {
 //     "&radius=1500&type=car_repair&key=AIzaSyD1SPf-ueMO6m5itNj_GSTabGu60sa7SeE",
 
 //   method: "GET",
-// }).then(function (response) {});
+// }).then(function (response) {
+//   var locName = response.name,
+//   locRating = response.rating,
+//   locURL = response.url;
+// });
 
 // function for loading the modal using foundation
 function loadModal() {
