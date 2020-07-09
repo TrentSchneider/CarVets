@@ -35,4 +35,10 @@ function loadModal() {
   closeButton.attr("data-close");
   closeButton.attr("aria-label", "Close modal");
   closeButton.attr("type", "button");
+  var closeSpan = $("span");
+  closeSpan.attr("aria-hidden", true);
+  closeSpan.html("&times;");
+  closeButton.append(closeSpan);
+  locModal.append(textSpace);
+  locModal.append(closeButton);
 }
