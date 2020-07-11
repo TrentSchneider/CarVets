@@ -45,4 +45,6 @@ function loadModal() {
   closeButton.append(closeSpan);
   locModal.append(textSpace);
   locModal.append(closeButton);
+  $("modalAnchor").append(locModal);
 }
+// $("#modalTrigger").on("click", loadModal());
