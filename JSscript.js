@@ -1,13 +1,13 @@
 var lati, long;
 
 // pulling user latitude and longitude and assigning to variables
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(showPosition);
-  function showPosition(position) {
-    lati = position.coords.latitude;
-    long = position.coords.longitude;
-  }
-}
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(showPosition);
+//   function showPosition(position) {
+//     lati = position.coords.latitude;
+//     long = position.coords.longitude;
+//   }
+// }
 
 // ajax call for pulling google place info
 // leaving commented out until we implement it to avoid needless calls
@@ -45,4 +45,6 @@ function loadModal() {
   closeButton.append(closeSpan);
   locModal.append(textSpace);
   locModal.append(closeButton);
+  $("modalAnchor").append(locModal);
 }
+// $("#modalTrigger").on("click", loadModal());
