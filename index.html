@@ -11,6 +11,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1SPf-ueMO6m5itNj_GSTabGu60sa7SeE&libraries=places"
+    ></script>
   </head>
 
   <body>
@@ -22,8 +26,8 @@
         </div>
       </div>
       <div class="grid-x" style="height: 600px;">
-        <div class="cell medium-2">
-          <ul id="locationList"></ul>
+        <div id="locationList" class="cell medium-2">
+          <ul id="list"></ul>
         </div>
         <div id="mapArea" class="cell medium-10">
           <!-- <div class="input-group searchbar">
@@ -51,13 +55,14 @@
         <button id="modalTrigger" class="button">Test Modal Button</button>
       </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-2.1.4.min.js "></script>
     <script
       src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
       integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
       crossorigin="anonymous"
     ></script>
-    <script src="layoutLogic.js "></script>
+    <!-- <script src="layoutLogic.js "></script> -->
     <script src="JSscript.js"></script>
     <script>
       $(document).foundation();
