@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css" />
     <script
       type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD1SPf-ueMO6m5itNj_GSTabGu60sa7SeE&libraries=places"
+      src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyD1SPf-ueMO6m5itNj_GSTabGu60sa7SeE"
     ></script>
   </head>
 
@@ -30,6 +30,61 @@
           <ul id="list"></ul>
         </div>
         <div id="mapArea" class="cell medium-10">
+          <script>
+            var map;
+            var service;
+            var infowindow;
+            // pulls the users current location and inserts the map once the location is established
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+              function showPosition(position) {
+                lati = position.coords.latitude;
+                long = position.coords.longitude;
+                initMap();
+              }
+            }
+            // inserts the map
+            function initMap() {
+              // centers map on user's current location
+              var center = new google.maps.LatLng(lati, long);
+              // creates the info windows in the map (popup windows that list location's name)
+              infowindow = new google.maps.InfoWindow();
+              // inserts the map in the div with the id mapArea, centers the map on the user location and sets the zoom level to 13
+              map = new google.maps.Map(document.getElementById("mapArea"), {
+                center: center,
+                zoom: 13,
+              });
+              // sets up the places query
+              var request = {
+                location: center,
+                radius: "8047",
+                types: ["car_repair"],
+              };
+              // uses the query to search near the map location and adds markers to the results
+              var service = new google.maps.places.PlacesService(map);
+              service.nearbySearch(request, callback);
+              // the function to add markers to all result locations
+              function callback(results, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                  for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                  }
+                }
+                // the function to create the markers and attach them to the infowindows
+                function createMarker(place) {
+                  var placeLoc = place.geometry.location;
+                  var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location,
+                  });
+                  google.maps.event.addListener(marker, "click", function () {
+                    infowindow.setContent(place.name);
+                    infowindow.open(map, this);
+                  });
+                }
+              }
+            }
+          </script>
           <!-- <div class="input-group searchbar">
             <div class="input-group-button">
               <button class="button search">
@@ -63,7 +118,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- <script src="layoutLogic.js "></script> -->
-    <script src="JSscript.js"></script>
+    <!-- <script src="JSscript.js"></script> -->
     <script>
       $(document).foundation();
     </script>

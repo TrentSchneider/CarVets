@@ -1,4 +1,4 @@
-var lati, long;
+// var lati, long;
 
 // pulling user latitude and longitude and assigning to variables
 // if (navigator.geolocation) {
@@ -9,8 +9,8 @@ var lati, long;
 //   }
 // }
 
-// ajax call for pulling google place info
-// leaving commented out until we implement it to avoid needless calls
+// // ajax call for pulling google place info
+// // leaving commented out until we implement it to avoid needless calls
 // $.ajax({
 //   url:
 //     "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
@@ -43,8 +43,8 @@ var lati, long;
 //       var liLocHours = $("p").text(liOpenHours);
 //       var liLocAddress = $("p").text(liAddress);
 //       addLocation.append(liLocName);
-//       // addLocation.append(liLocAddress);
-//       // addLocation.append(liLocHours);
+// addLocation.append(liLocAddress);
+// addLocation.append(liLocHours);
 //       $("#list").append(addLocation);
 //     }
 //   });
