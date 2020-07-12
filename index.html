@@ -26,9 +26,6 @@
         </div>
       </div>
       <div class="grid-x" style="height: 600px;">
-        <div id="locationList" class="cell medium-2">
-          <ul id="list"></ul>
-        </div>
         <div id="mapArea" class="cell medium-10">
           <script>
             var map;
@@ -66,8 +63,15 @@
               // the function to add markers to all result locations
               function callback(results, status) {
                 if (status == google.maps.places.PlacesServiceStatus.OK) {
+                  console.log(results);
                   for (var i = 0; i < results.length; i++) {
                     createMarker(results[i]);
+                    var newLI = $("<li>"),
+                      address = $("<p>"),
+                      directions = $("<a>");
+                    newLI.text(results[i].name);
+                    console.log(newLI);
+                    $("#locList").append(newLI);
                   }
                 }
                 // the function to create the markers and attach them to the infowindows
@@ -104,6 +108,9 @@
             />
           </div> -->
           <div class="mapAnchor"></div>
+        </div>
+        <div id="locationList" class="cell medium-2">
+          <ul id="locList"></ul>
         </div>
       </div>
       <div id="modalAnchor">
