@@ -1,0 +1,12 @@
+#locationList {
+	background-color: grey;
+}
+#mapArea {
+	background-color: lightgray;
+}
+.grid-container {
+	height: 100vh;
+}
+.callout {
+	margin: 0;
+}
